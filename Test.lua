@@ -20,5 +20,6 @@ return {
     [19] = {"812ab827-73c4-4c2f-98af-ddc4215a83ec", false},
     [20] = {"c0cc4403-a880-4c0a-9ee9-04fdd43a4c23", false},
     [21] = {"cb412d88-17bf-4f82-9ed6-78d442f01d33", false},
-    [22] = {"96ccf8c6-00af-4feb-84d1-ba6e141f6d0a", false}
+    [22] = {"96ccf8c6-00af-4feb-84d1-ba6e141f6d0a", false},
+    [23] = {"36185182-699b-4f38-892c-1df7d130ee9a", false}
 }

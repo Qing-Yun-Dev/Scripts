@@ -1,0 +1,20 @@
+{
+    "Data" : {
+        "RD" : {
+            "Version" : "1.0",
+            "Blacklist" : true
+        },
+        "Pressure" : {
+            "Version" : "1.0",
+            "Blacklist" : true
+        },
+        "Forsaken" : {
+            "Version" : "1.0",
+            "Blacklist" : true
+        },
+        "Regretevator" : {
+            "Version" : "1.0",
+            "Whitelist" : true
+        }
+    }
+}

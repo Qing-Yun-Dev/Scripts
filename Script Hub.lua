@@ -1043,6 +1043,7 @@ Tab:AddToggle({
     else
         if DisableAutoJump then
             DisableAutoJump:Disconnect()
+            game.Players.LocalPlayer.Character.Humanoid.AutoJumpEnabled = false
         end
     end
 end})

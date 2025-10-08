@@ -1032,35 +1032,18 @@ Tab:AddToggle({
     end
 end})
 
-Tab:AddToggle({
+Tab:AddButton({
     Name = "关闭自动跳跃",
-    Default = false,
-    Callback = function(Value)
-    if Value then
-        DisableAutoJump = game:GetService("RunService").RenderStepped:Connect(function()
-            game.Players.LocalPlayer.Character.Humanoid.AutoJumpEnabled = false
-        end)
-    else
-        if DisableAutoJump then
-            DisableAutoJump:Disconnect()
-        end
-        game.Players.LocalPlayer.Character.Humanoid.AutoJumpEnabled = true
-    end
+    Callback = function()
+    game.Players.LocalPlayer.Character.Humanoid.AutoJumpEnabled = false
 end})
 
-Tab:AddToggle({
+Tab:AddButton({
     Name = "无限跳跃",
-    Default = false,
-    Callback = function(Value)
-    if Value then
-        InfiniteJump = game:GetService("UserInputService").JumpRequest:Connect(function()
-            game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
-        end)
-    else
-        if InfiniteJump then
-            InfiniteJump:Disconnect()
-        end
-    end
+    Callback = function()
+    game:GetService("UserInputService").JumpRequest:Connect(function()
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+    end)
 end})
 
 Tab:AddButton({

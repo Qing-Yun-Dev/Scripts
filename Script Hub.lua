@@ -1032,10 +1032,15 @@ Tab:AddToggle({
     end
 end})
 
-Tab:AddButton({
+Tab:AddToggle({
     Name = "关闭自动跳跃",
-    Callback = function()
-    game.Players.LocalPlayer.Character.Humanoid.AutoJumpEnabled = false
+    Default = false,
+    Callback = function(Value)
+    if Value then
+        game.Players.LocalPlayer.AutoJumpEnabled = false
+    else
+        game.Players.LocalPlayer.AutoJumpEnabled = true
+    end
 end})
 
 Tab:AddButton({

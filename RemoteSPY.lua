@@ -133,7 +133,7 @@ local function deepclone(args: table, copies: table): table
     local copy = nil
     copies = copies or {}
 
-    if type(args) == 'table' then
+    if type(args) == "table" then
         if copies[args] then
             copy = copies[args]
         else
@@ -207,7 +207,7 @@ function ErrorPrompt(Message, state)
                 end
             end,
             Primary = true
-        }}, 'Default')
+        }}, "Default")
         prompt:_open(Message)
         if thread then
             yield(thread)
@@ -324,7 +324,7 @@ local synv3 = false
 
 if syn and identifyexecutor then
     local _, version = identifyexecutor()
-    if (version and version:sub(1, 2) == 'v3') then
+    if (version and version:sub(1, 2) == "v3") then
         synv3 = true
     end
 end
@@ -446,7 +446,7 @@ function connectResize()
     local lastCam = workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(bringBackOnResize)
     workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
         lastCam:Disconnect()
-        if typeof(lastCam) == 'Connection' then
+        if typeof(lastCam) == "Connection" then
             lastCam:Disconnect()
         end
         lastCam = workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(bringBackOnResize)
@@ -677,11 +677,11 @@ function isInResizeRange(p)
     local range = 5
     if relativeP.X >= TopBar.AbsoluteSize.X - range and relativeP.Y >= Background.AbsoluteSize.Y - range
         and relativeP.X <= TopBar.AbsoluteSize.X and relativeP.Y <= Background.AbsoluteSize.Y then
-        return true, 'B'
+        return true, "B"
     elseif relativeP.X >= TopBar.AbsoluteSize.X - range and relativeP.X <= Background.AbsoluteSize.X then
-        return true, 'X'
+        return true, "X"
     elseif relativeP.Y >= Background.AbsoluteSize.Y - range and relativeP.Y <= Background.AbsoluteSize.Y then
-        return true, 'Y'
+        return true, "Y"
     end
     return false
 end
@@ -705,6 +705,22 @@ function mouseEntered()
     connections["SIMPLESPY_CURSOR"] = RunService.RenderStepped:Connect(function()
         UserInputService.MouseIconEnabled = not mouseInGui
         customCursor.Visible = mouseInGui
+        if mouseInGui and getgenv().SimpleSpyExecuted then
+            local mouseLocation = UserInputService:GetMouseLocation() - GuiInset
+            customCursor.Position = UDim2.fromOffset(mouseLocation.X - customCursor.AbsoluteSize.X / 2, mouseLocation.Y - customCursor.AbsoluteSize.Y / 2)
+            local inRange, type = isInResizeRange(mouseLocation)
+            if inRange and not closed then
+                if not sideClosed then
+                    customCursor.Image = type == "B" and "rbxassetid://6065821980" or type == "X" and "rbxassetid://6065821086" or type == "Y" and "rbxassetid://6065821596"
+                elseif type == "Y" or type == "B" then
+                    customCursor.Image = "rbxassetid://6065821596"
+                end
+            elseif customCursor.Image ~= "rbxassetid://6065775281" then
+                customCursor.Image = "rbxassetid://6065775281"
+            end
+        else
+            connections["SIMPLESPY_CURSOR"]:Disconnect()
+        end
     end)
 end
 
@@ -1006,7 +1022,7 @@ function genScript(remote, args)
                     if type(i) ~= "Instance" and type(i) ~= "userdata" then
                         gen = gen .. "\n    [object] = "
                     elseif type(i) == "string" then
-                        gen = gen .. '\n    ["' .. i .. '"] = '
+                        gen = gen .. "\n    ["" .. i .. ""] = "
                     elseif type(i) == "userdata" and typeof(i) ~= "Instance" then
                         gen = gen .. "\n    [" .. string.format("nil --[[%s]]", typeof(v)) .. ")] = "
                     elseif type(i) == "userdata" then
@@ -1015,7 +1031,7 @@ function genScript(remote, args)
                     if type(v) ~= "Instance" and type(v) ~= "userdata" then
                         gen = gen .. "object"
                     elseif type(v) == "string" then
-                        gen = gen .. '"' .. v .. '"'
+                        gen = gen .. """ .. v .. """
                     elseif type(v) == "userdata" and typeof(v) ~= "Instance" then
                         gen = gen .. string.format("nil --[[%s]]", typeof(v))
                     elseif type(v) == "userdata" then
@@ -1375,13 +1391,13 @@ function i2p(i, customgen)
         while true do
             if parent and parent == player.Character then
                 if player == Players.LocalPlayer then
-                    return 'game:GetService("Players").LocalPlayer.Character' .. out
+                    return "game:GetService("Players").LocalPlayer.Character" .. out
                 else
                     return i2p(player) .. ".Character" .. out
                 end
             else
                 if parent.Name:match("[%a_]+[%w+]*") ~= parent.Name then
-                    out = ':FindFirstChild(' .. formatstr(parent.Name) .. ')' .. out
+                    out = ":FindFirstChild(" .. formatstr(parent.Name) .. ")" .. out
                 else
                     out = "." .. parent.Name .. out
                 end
@@ -1396,27 +1412,27 @@ function i2p(i, customgen)
                     if lower(parent.ClassName) == "workspace" then
                         return `workspace{out}`
                     else
-                        return 'game:GetService("' .. parent.ClassName .. '")' .. out
+                        return "game:GetService("" .. parent.ClassName .. "")" .. out
                     end
                 else
                     if parent.Name:match("[%a_]+[%w_]*") then
                         return "game." .. parent.Name .. out
                     else
-                        return 'game:FindFirstChild(' .. formatstr(parent.Name) .. ')' .. out
+                        return "game:FindFirstChild(" .. formatstr(parent.Name) .. ")" .. out
                     end
                 end
             elseif not parent.Parent then
                 getnilrequired = true
-                return 'getNil(' .. formatstr(parent.Name) .. ', "' .. parent.ClassName .. '")' .. out
+                return "getNil(" .. formatstr(parent.Name) .. ", "" .. parent.ClassName .. "")" .. out
             else
                 if parent.Name:match("[%a_]+[%w_]*") ~= parent.Name then
-                    out = ':WaitForChild(' .. formatstr(parent.Name) .. ')' .. out
+                    out = ":WaitForChild(" .. formatstr(parent.Name) .. ")" .. out
                 else
-                    out = ':WaitForChild("' .. parent.Name .. '")'..out
+                    out = ":WaitForChild("" .. parent.Name .. "")"..out
                 end
             end
             if i:IsDescendantOf(Players.LocalPlayer) then
-                return 'game:GetService("Players").LocalPlayer'..out
+                return "game:GetService("Players").LocalPlayer"..out
             end
             parent = parent.Parent
             task.wait()
@@ -1484,7 +1500,7 @@ function formatstr(s, indentation)
         indentation = 0
     end
     local handled, reachedMax = handlespecials(s, indentation)
-    return '"' .. handled .. '"' .. (reachedMax and " --[[ MAXIMUM STRING SIZE REACHED, CHANGE 'getgenv().SimpleSpyMaxStringSize' TO ADJUST MAXIMUM SIZE ]]" or "")
+    return """ .. handled .. """ .. (reachedMax and " --[[ MAXIMUM STRING SIZE REACHED, CHANGE 'getgenv().SimpleSpyMaxStringSize' TO ADJUST MAXIMUM SIZE ]]" or "")
 end
 
 --- Adds \'s to the text as a replacement to whitespace chars and other things because string.format can't yayeet
@@ -1508,7 +1524,7 @@ local specialstrings = {
     ["\\"] = function(thread, index)
         resume(thread, index, "\\\\")
     end,
-    ['"'] = function(thread, index)
+    ["""] = function(thread, index)
         resume(thread, index, "\\\"")
     end
 }
@@ -1544,7 +1560,7 @@ function handlespecials(s, indentation)
                 i += #rawtostring(byte(char))
             end
             if i >= n * 100 then
-                local extra = string.format('" ..\n%s"', string.rep(" ", indentation + indent))
+                local extra = string.format("" ..\n%s"", string.rep(" ", indentation + indent))
                 s = s:sub(0, i) .. extra .. s:sub(i + 1, -1)
                 i += #extra
                 n += 1
@@ -1682,7 +1698,7 @@ function remoteHandler(data)
 end
 
 local newindex = function(method, originalfunction, ...)
-    if typeof(...) == 'Instance' then
+    if typeof(...) == "Instance" then
         local remote = cloneref(...)
 
         if remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction") then
@@ -1742,7 +1758,7 @@ local newnamecall = newcclosure(function(...)
     local method = getnamecallmethod()
 
     if method and (method == "FireServer" or method == "fireServer" or method == "InvokeServer" or method == "invokeServer") then
-        if typeof(...) == 'Instance' then
+        if typeof(...) == "Instance" then
             local remote = cloneref(...)
 
             if IsA(remote, "RemoteEvent") or IsA(remote, "RemoteFunction") then    
@@ -1935,8 +1951,8 @@ if not getgenv().SimpleSpyExecuted then
         logthread(spawn(function()
             local lp = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
             generation = {
-                [OldDebugId(lp)] = 'game:GetService("Players").LocalPlayer',
-                [OldDebugId(lp:GetMouse())] = 'game:GetService("Players").LocalPlayer:GetMouse',
+                [OldDebugId(lp)] = "game:GetService("Players").LocalPlayer",
+                [OldDebugId(lp:GetMouse())] = "game:GetService("Players").LocalPlayer:GetMouse",
                 [OldDebugId(game)] = "game",
                 [OldDebugId(workspace)] = "workspace"
             }
@@ -2049,7 +2065,7 @@ function()
     if func then
         local typeoffunc = typeof(func)
 
-        if typeoffunc ~= 'string' then
+        if typeoffunc ~= "string" then
             codebox:setRaw("--[[Generating Function Info please wait]]")
             RunService.Heartbeat:Wait()
             local lclosure = islclosure(func)
@@ -2062,8 +2078,8 @@ function()
                 constants = lclosure and deepclone(getconstants(func)) or "N/A --Lua Closure expected got C Closure",
                 upvalues = deepclone(getupvalues(func)),
                 script = {
-                    SourceScript = SourceScript or 'nil',
-                    CallingScript = CallingScript or 'nil'
+                    SourceScript = SourceScript or "nil",
+                    CallingScript = CallingScript or "nil"
                 }
             }
                     
@@ -2123,7 +2139,7 @@ newButton(
 
 --- Excludes the selected.Log Remote from the RemoteSpy
 newButton(
-    "Exclude (i)",
+    "Exclude",
     function() return "Click to exclude this Remote.\nExcluding a remote makes SimpleSpy ignore it, but it will continue to be usable." end,
     function()
         if selected then
@@ -2135,7 +2151,7 @@ newButton(
 
 --- Excludes all Remotes that share the same name as the selected.Log remote from the RemoteSpy
 newButton(
-    "Exclude (n)",
+    "Exclude",
     function() return "Click to exclude all remotes with this name.\nExcluding a remote makes SimpleSpy ignore it, but it will continue to be usable." end,
     function()
         if selected then
@@ -2155,7 +2171,7 @@ end)
 
 --- Prevents the selected.Log Remote from firing the server (still logged)
 newButton(
-    "Block (i)",
+    "Block",
     function() return "Click to stop this remote from firing.\nBlocking a remote won't remove it from SimpleSpy logs, but it will not continue to fire the server." end,
     function()
         if selected then
@@ -2166,7 +2182,7 @@ newButton(
 )
 
 --- Prevents all remotes from firing that share the same name as the selected.Log remote from the RemoteSpy (still logged)
-newButton("Block (n)", function()
+newButton("Block", function()
     return "Click to stop remotes with this name from firing.\nBlocking a remote won't remove it from SimpleSpy logs, but it will not continue to fire the server." end,
     function()
         if selected then
@@ -2287,7 +2303,7 @@ function()
     setclipboard("https://discord.com/invite/AWS6ez9")
     TextLabel.Text = "Copied invite to your clipboard"
     if request then
-        request({Url = 'http://127.0.0.1:6463/rpc?v=1', Method = 'POST', Headers = {['Content-Type'] = 'application/json', Origin = 'https://discord.com'}, Body = http:JSONEncode({cmd = 'INVITE_BROWSER', nonce = http:GenerateGUID(false), args = {code = 'AWS6ez9'}})})
+        request({Url = "http://127.0.0.1:6463/rpc?v=1", Method = "POST", Headers = {["Content-Type"] = "application/json", Origin = "https://discord.com"}, Body = http:JSONEncode({cmd = "INVITE_BROWSER", nonce = http:GenerateGUID(false), args = {code = "AWS6ez9"}})})
     end
 end)
 

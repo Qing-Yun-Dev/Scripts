@@ -482,9 +482,9 @@ function bringBackOnResize()
 end
 
 --- Drags gui (so long as mouse is held down)
---- @param Input InputObject
-function onBarInput(Input)
-    if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+--- @param input InputObject
+function onBarInput(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
         local lastPos = UserInputService:GetMouseLocation()
         local mainPos = Background.AbsolutePosition
         local offset = mainPos - lastPos
@@ -514,13 +514,13 @@ function onBarInput(Input)
                     lastPos = newPos
                     TweenService.Create(TweenService, Background, TweenInfo.new(0.1), {Position = UDim2.new(0, currentPos.X, 0, currentPos.Y)}):Play()
                 end
-                    -- if Input.UserInputState ~= Enum.UserInputState.Begin then
+                    -- if input.UserInputState ~= Enum.UserInputState.Begin then
                     --     RunService.UnbindFromRenderStep(RunService, "drag")
                     -- end
             end)
         end
-        table.insert(connections, UserInputService.InputEnded:Connect(function(InputE)
-            if Input == InputE then
+        table.insert(connections, UserInputService.InputEnded:Connect(function(inputE)
+            if input == inputE then
                 if connections["drag"] then
                     connections["drag"]:Disconnect()
                     connections["drag"] = nil
@@ -785,12 +785,12 @@ function validateSize()
     Background.Size = UDim2.fromOffset(x, y)
 end
 
---- Called on user Input while mouse in 'Background' frame
---- @param Input InputObject
-function backgroundUserInput(Input)
+--- Called on user input while mouse in 'Background' frame
+--- @param input InputObject
+function backgroundUserInput(input)
     local mousePos = UserInputService:GetMouseLocation() - GuiInset
     local inResizeRange, type = isInResizeRange(mousePos)
-    if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch and inResizeRange then
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch and inResizeRange then
         local lastPos = UserInputService:GetMouseLocation()
         local offset = Background.AbsoluteSize - lastPos
         local currentPos = lastPos + offset
@@ -818,8 +818,8 @@ function backgroundUserInput(Input)
                 end
             end)
         end
-        table.insert(connections, UserInputService.InputEnded:Connect(function(InputE)
-            if Input == InputE then
+        table.insert(connections, UserInputService.InputEnded:Connect(function(inputE)
+            if input == inputE then
                 if connections["SIMPLESPY_RESIZE"] then
                     connections["SIMPLESPY_RESIZE"]:Disconnect()
                     connections["SIMPLESPY_RESIZE"] = nil
@@ -827,7 +827,7 @@ function backgroundUserInput(Input)
             end
         end))
     elseif isInDragRange(mousePos) then
-        onBarInput(Input)
+        onBarInput(input)
     end
 end
 
@@ -1022,7 +1022,7 @@ function genScript(remote, args)
                     if type(i) ~= "Instance" and type(i) ~= "userdata" then
                         gen = gen .. "\n    [object] = "
                     elseif type(i) == "string" then
-                        gen = gen .. "\n    ["" .. i .. ""] = "
+                        gen = gen .. '\n    ["' .. i .. '"] = '
                     elseif type(i) == "userdata" and typeof(i) ~= "Instance" then
                         gen = gen .. "\n    [" .. string.format("nil --[[%s]]", typeof(v)) .. ")] = "
                     elseif type(i) == "userdata" then
@@ -1031,7 +1031,7 @@ function genScript(remote, args)
                     if type(v) ~= "Instance" and type(v) ~= "userdata" then
                         gen = gen .. "object"
                     elseif type(v) == "string" then
-                        gen = gen .. """ .. v .. """
+                        gen = gen .. '"' .. v .. '"'
                     elseif type(v) == "userdata" and typeof(v) ~= "Instance" then
                         gen = gen .. string.format("nil --[[%s]]", typeof(v))
                     elseif type(v) == "userdata" then
@@ -1391,13 +1391,13 @@ function i2p(i, customgen)
         while true do
             if parent and parent == player.Character then
                 if player == Players.LocalPlayer then
-                    return "game:GetService("Players").LocalPlayer.Character" .. out
+                    return 'game:GetService("Players").LocalPlayer.Character' .. out
                 else
                     return i2p(player) .. ".Character" .. out
                 end
             else
                 if parent.Name:match("[%a_]+[%w+]*") ~= parent.Name then
-                    out = ":FindFirstChild(" .. formatstr(parent.Name) .. ")" .. out
+                    out = ':FindFirstChild(' .. formatstr(parent.Name) .. ')' .. out
                 else
                     out = "." .. parent.Name .. out
                 end
@@ -1412,27 +1412,27 @@ function i2p(i, customgen)
                     if lower(parent.ClassName) == "workspace" then
                         return `workspace{out}`
                     else
-                        return "game:GetService("" .. parent.ClassName .. "")" .. out
+                        return 'game:GetService("' .. parent.ClassName .. '")' .. out
                     end
                 else
                     if parent.Name:match("[%a_]+[%w_]*") then
                         return "game." .. parent.Name .. out
                     else
-                        return "game:FindFirstChild(" .. formatstr(parent.Name) .. ")" .. out
+                        return 'game:FindFirstChild(' .. formatstr(parent.Name) .. ')' .. out
                     end
                 end
             elseif not parent.Parent then
                 getnilrequired = true
-                return "getNil(" .. formatstr(parent.Name) .. ", "" .. parent.ClassName .. "")" .. out
+                return 'getNil(' .. formatstr(parent.Name) .. ', "' .. parent.ClassName .. '")' .. out
             else
                 if parent.Name:match("[%a_]+[%w_]*") ~= parent.Name then
-                    out = ":WaitForChild(" .. formatstr(parent.Name) .. ")" .. out
+                    out = ':WaitForChild(' .. formatstr(parent.Name) .. ')' .. out
                 else
-                    out = ":WaitForChild("" .. parent.Name .. "")"..out
+                    out = ':WaitForChild("' .. parent.Name .. '")'..out
                 end
             end
             if i:IsDescendantOf(Players.LocalPlayer) then
-                return "game:GetService("Players").LocalPlayer"..out
+                return 'game:GetService("Players").LocalPlayer'..out
             end
             parent = parent.Parent
             task.wait()
@@ -1500,7 +1500,7 @@ function formatstr(s, indentation)
         indentation = 0
     end
     local handled, reachedMax = handlespecials(s, indentation)
-    return """ .. handled .. """ .. (reachedMax and " --[[ MAXIMUM STRING SIZE REACHED, CHANGE 'getgenv().SimpleSpyMaxStringSize' TO ADJUST MAXIMUM SIZE ]]" or "")
+    return '"' .. handled .. '"' .. (reachedMax and " --[[ MAXIMUM STRING SIZE REACHED, CHANGE 'getgenv().SimpleSpyMaxStringSize' TO ADJUST MAXIMUM SIZE ]]" or "")
 end
 
 --- Adds \'s to the text as a replacement to whitespace chars and other things because string.format can't yayeet
@@ -1524,7 +1524,7 @@ local specialstrings = {
     ["\\"] = function(thread, index)
         resume(thread, index, "\\\\")
     end,
-    ["""] = function(thread, index)
+    ['"'] = function(thread, index)
         resume(thread, index, "\\\"")
     end
 }
@@ -1560,7 +1560,7 @@ function handlespecials(s, indentation)
                 i += #rawtostring(byte(char))
             end
             if i >= n * 100 then
-                local extra = string.format("" ..\n%s"", string.rep(" ", indentation + indent))
+                local extra = string.format('" ..\n%s"', string.rep(" ", indentation + indent))
                 s = s:sub(0, i) .. extra .. s:sub(i + 1, -1)
                 i += #extra
                 n += 1
@@ -1698,7 +1698,7 @@ function remoteHandler(data)
 end
 
 local newindex = function(method, originalfunction, ...)
-    if typeof(...) == "Instance" then
+    if typeof(...) == 'Instance' then
         local remote = cloneref(...)
 
         if remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction") then
@@ -1758,7 +1758,7 @@ local newnamecall = newcclosure(function(...)
     local method = getnamecallmethod()
 
     if method and (method == "FireServer" or method == "fireServer" or method == "InvokeServer" or method == "invokeServer") then
-        if typeof(...) == "Instance" then
+        if typeof(...) == 'Instance' then
             local remote = cloneref(...)
 
             if IsA(remote, "RemoteEvent") or IsA(remote, "RemoteFunction") then    
@@ -1951,8 +1951,8 @@ if not getgenv().SimpleSpyExecuted then
         logthread(spawn(function()
             local lp = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
             generation = {
-                [OldDebugId(lp)] = "game:GetService("Players").LocalPlayer",
-                [OldDebugId(lp:GetMouse())] = "game:GetService("Players").LocalPlayer:GetMouse",
+                [OldDebugId(lp)] = 'game:GetService("Players").LocalPlayer',
+                [OldDebugId(lp:GetMouse())] = 'game:GetService("Players").LocalPlayer:GetMouse',
                 [OldDebugId(game)] = "game",
                 [OldDebugId(workspace)] = "workspace"
             }
@@ -2065,7 +2065,7 @@ function()
     if func then
         local typeoffunc = typeof(func)
 
-        if typeoffunc ~= "string" then
+        if typeoffunc ~= 'string' then
             codebox:setRaw("--[[Generating Function Info please wait]]")
             RunService.Heartbeat:Wait()
             local lclosure = islclosure(func)
@@ -2078,8 +2078,8 @@ function()
                 constants = lclosure and deepclone(getconstants(func)) or "N/A --Lua Closure expected got C Closure",
                 upvalues = deepclone(getupvalues(func)),
                 script = {
-                    SourceScript = SourceScript or "nil",
-                    CallingScript = CallingScript or "nil"
+                    SourceScript = SourceScript or 'nil',
+                    CallingScript = CallingScript or 'nil'
                 }
             }
                     
@@ -2139,7 +2139,7 @@ newButton(
 
 --- Excludes the selected.Log Remote from the RemoteSpy
 newButton(
-    "Exclude",
+    "Exclude (i)",
     function() return "Click to exclude this Remote.\nExcluding a remote makes SimpleSpy ignore it, but it will continue to be usable." end,
     function()
         if selected then
@@ -2151,7 +2151,7 @@ newButton(
 
 --- Excludes all Remotes that share the same name as the selected.Log remote from the RemoteSpy
 newButton(
-    "Exclude",
+    "Exclude (n)",
     function() return "Click to exclude all remotes with this name.\nExcluding a remote makes SimpleSpy ignore it, but it will continue to be usable." end,
     function()
         if selected then
@@ -2171,7 +2171,7 @@ end)
 
 --- Prevents the selected.Log Remote from firing the server (still logged)
 newButton(
-    "Block",
+    "Block (i)",
     function() return "Click to stop this remote from firing.\nBlocking a remote won't remove it from SimpleSpy logs, but it will not continue to fire the server." end,
     function()
         if selected then
@@ -2182,7 +2182,7 @@ newButton(
 )
 
 --- Prevents all remotes from firing that share the same name as the selected.Log remote from the RemoteSpy (still logged)
-newButton("Block", function()
+newButton("Block (n)", function()
     return "Click to stop remotes with this name from firing.\nBlocking a remote won't remove it from SimpleSpy logs, but it will not continue to fire the server." end,
     function()
         if selected then

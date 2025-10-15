@@ -482,9 +482,9 @@ function bringBackOnResize()
 end
 
 --- Drags gui (so long as mouse is held down)
---- @param input InputObject
-function onBarInput(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+--- @param Input InputObject
+function onBarInput(Input)
+    if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
         local lastPos = UserInputService:GetMouseLocation()
         local mainPos = Background.AbsolutePosition
         local offset = mainPos - lastPos
@@ -514,13 +514,13 @@ function onBarInput(input)
                     lastPos = newPos
                     TweenService.Create(TweenService, Background, TweenInfo.new(0.1), {Position = UDim2.new(0, currentPos.X, 0, currentPos.Y)}):Play()
                 end
-                    -- if input.UserInputState ~= Enum.UserInputState.Begin then
+                    -- if Input.UserInputState ~= Enum.UserInputState.Begin then
                     --     RunService.UnbindFromRenderStep(RunService, "drag")
                     -- end
             end)
         end
-        table.insert(connections, UserInputService.InputEnded:Connect(function(inputE)
-            if input == inputE then
+        table.insert(connections, UserInputService.InputEnded:Connect(function(InputE)
+            if Input == InputE then
                 if connections["drag"] then
                     connections["drag"]:Disconnect()
                     connections["drag"] = nil
@@ -785,12 +785,12 @@ function validateSize()
     Background.Size = UDim2.fromOffset(x, y)
 end
 
---- Called on user input while mouse in 'Background' frame
---- @param input InputObject
-function backgroundUserInput(input)
+--- Called on user Input while mouse in 'Background' frame
+--- @param Input InputObject
+function backgroundUserInput(Input)
     local mousePos = UserInputService:GetMouseLocation() - GuiInset
     local inResizeRange, type = isInResizeRange(mousePos)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch and inResizeRange then
+    if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch and inResizeRange then
         local lastPos = UserInputService:GetMouseLocation()
         local offset = Background.AbsoluteSize - lastPos
         local currentPos = lastPos + offset
@@ -818,8 +818,8 @@ function backgroundUserInput(input)
                 end
             end)
         end
-        table.insert(connections, UserInputService.InputEnded:Connect(function(inputE)
-            if input == inputE then
+        table.insert(connections, UserInputService.InputEnded:Connect(function(InputE)
+            if Input == InputE then
                 if connections["SIMPLESPY_RESIZE"] then
                     connections["SIMPLESPY_RESIZE"]:Disconnect()
                     connections["SIMPLESPY_RESIZE"] = nil
@@ -827,7 +827,7 @@ function backgroundUserInput(input)
             end
         end))
     elseif isInDragRange(mousePos) then
-        onBarInput(input)
+        onBarInput(Input)
     end
 end
 
@@ -1698,7 +1698,7 @@ function remoteHandler(data)
 end
 
 local newindex = function(method, originalfunction, ...)
-    if typeof(...) == 'Instance' then
+    if typeof(...) == "Instance" then
         local remote = cloneref(...)
 
         if remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction") then
@@ -1758,7 +1758,7 @@ local newnamecall = newcclosure(function(...)
     local method = getnamecallmethod()
 
     if method and (method == "FireServer" or method == "fireServer" or method == "InvokeServer" or method == "invokeServer") then
-        if typeof(...) == 'Instance' then
+        if typeof(...) == "Instance" then
             local remote = cloneref(...)
 
             if IsA(remote, "RemoteEvent") or IsA(remote, "RemoteFunction") then    
@@ -2065,7 +2065,7 @@ function()
     if func then
         local typeoffunc = typeof(func)
 
-        if typeoffunc ~= 'string' then
+        if typeoffunc ~= "string" then
             codebox:setRaw("--[[Generating Function Info please wait]]")
             RunService.Heartbeat:Wait()
             local lclosure = islclosure(func)
@@ -2078,8 +2078,8 @@ function()
                 constants = lclosure and deepclone(getconstants(func)) or "N/A --Lua Closure expected got C Closure",
                 upvalues = deepclone(getupvalues(func)),
                 script = {
-                    SourceScript = SourceScript or 'nil',
-                    CallingScript = CallingScript or 'nil'
+                    SourceScript = SourceScript or "nil",
+                    CallingScript = CallingScript or "nil"
                 }
             }
                     

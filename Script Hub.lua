@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Qing-Yun-Dev/UI/Main/OrionUI.lua"))()
+local OrionLib = loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\85\73\47\77\97\105\110\47\79\114\105\111\110\85\73\46\108\117\97"))()
 
 if game.Players.LocalPlayer.Name == "AQ14ABS" or game.Players.LocalPlayer.Name == "edc12363" or game.Players.LocalPlayer.Name == "onygfvjop" or game.Players.LocalPlayer.Name == "ah_kdj3" or game.Players.LocalPlayer.Name == "luoyang100616" or game.Players.LocalPlayer.Name == "hdjdje675" or game.Players.LocalPlayer.Name == "qazwsxuruu" or game.Players.LocalPlayer.Name == "ADCZ4xx"
 or game.Players.LocalPlayer.Name == "hjcjb96" or game.Players.LocalPlayer.Name == "TM5418888" or game.Players.LocalPlayer.Name == "codm656558" then
@@ -1905,7 +1905,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
     Name = "Rooms & Doors",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Qing-Yun-Dev/Scripts/Main/Rooms%20%26%20Doors.lua"))()
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\82\111\111\109\115\37\50\48\37\50\54\37\50\48\68\111\111\114\115\46\108\117\97"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -1923,7 +1923,7 @@ end})
 Tab:AddButton({
     Name = "情云压力",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Qing-Yun-Dev/Scripts/Main/Pressure.lua"))()
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\80\114\101\115\115\117\114\101\46\108\117\97"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -3723,7 +3723,7 @@ end})
 Tab:AddButton({
     Name = "卡UI了无法滑动 ? 点我",
     Callback = function()
-game:GetService("CoreGui")["Discord"]:Destroy()
+    game.CoreGui.Discord:Destroy()
 end})
 
 local Tab = Window:MakeTab({
@@ -3735,7 +3735,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "情云Forsaken",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Qing-Yun-Dev/Scripts/Main/Forsaken.lua"))()
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\70\111\114\115\97\107\101\110\46\108\117\97"))()
 end})
 
 Tab:AddButton({

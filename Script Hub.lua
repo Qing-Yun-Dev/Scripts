@@ -62,13 +62,13 @@ end})
 Tab:AddButton({
     Name = "IY Dex修复版",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
 end})
 
 Tab:AddButton({
     Name = "普京比例",
     Callback = function()
-getgenv().Resolution = {
+    getgenv().Resolution = {
     [".gg/scripters"] = 0.65
 }
 
@@ -86,7 +86,7 @@ end})
 Tab:AddButton({
     Name = "恢复比例",
     Callback = function()
-getgenv().Resolution = {
+    getgenv().Resolution = {
     [".gg/scripters"] = 1
 }
 
@@ -344,63 +344,63 @@ end})
 Tab:AddButton({
     Name = "IY指令",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end})
 
 Tab:AddButton({
     Name = "IY指令 ( 中文版 )",
     Callback = function()
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,87,97,110,103,122,104,101,104,97,111,104,47,102,108,121,45,97,119,97,121,47,109,97,105,110,47,37,69,54,37,56,67,37,56,55,37,69,52,37,66,66,37,56,65,37,69,52,37,66,56,37,65,68,37,69,54,37,57,54,37,56,55,46,116,120,116})end)())))()
+    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,87,97,110,103,122,104,101,104,97,111,104,47,102,108,121,45,97,119,97,121,47,109,97,105,110,47,37,69,54,37,56,67,37,56,55,37,69,52,37,66,66,37,56,65,37,69,52,37,66,56,37,65,68,37,69,54,37,57,54,37,56,55,46,116,120,116})end)())))()
 end})
 
 Tab:AddButton({
     Name = "撸管R6",
     Callback = function()
-loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
+    loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
 end})
 
 Tab:AddButton({
     Name = "撸管R15",
     Callback = function()
-loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
+    loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
 end})
 
 Tab:AddButton({
     Name = "自瞄 ( 头部 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "Head",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "Head",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
     Name = "自瞄 ( 身体 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "HumanoidRootPart",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "HumanoidRootPart",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
@@ -888,28 +888,28 @@ Blue.Text = ""
 Blue.TextColor3 = Color3.fromRGB(0, 0, 0)
 Blue.TextSize = 14.000
 game:GetService("RunService").RenderStepped:connect(function()
- for i,v in next, game.Players:GetPlayers() do
-  if v.Name ~= game.Players.LocalPlayer.Name then
-   v.Character.HumanoidRootPart.Size = Vector3.new(HitBox.Text,HitBox.Text,HitBox.Text)
-   v.Character.HumanoidRootPart.Transparency = 0.8
-   v.Character.HumanoidRootPart.Color = Color3.new(Red.Text,Green.Text,Blue.Text)
-   v.Character.HumanoidRootPart.Material = "Neon"
-   v.Character.HumanoidRootPart.CanCollide = false
-  end
- end
+    for i, v in next, game.Players:GetPlayers() do
+        if v.Name ~= game.Players.LocalPlayer.Name then
+            v.Character.HumanoidRootPart.Size = Vector3.new(HitBox.Text,HitBox.Text,HitBox.Text)
+            v.Character.HumanoidRootPart.Transparency = 0.8
+            v.Character.HumanoidRootPart.Color = Color3.new(Red.Text,Green.Text,Blue.Text)
+            v.Character.HumanoidRootPart.Material = "Neon"
+            v.Character.HumanoidRootPart.CanCollide = false
+        end
+    end
 end)
 end})
 
 Tab:AddButton({
     Name = "防甩飞",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ChinaQY/Scripts/Main/AntiFling.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ChinaQY/Scripts/Main/AntiFling.lua"))()
 end})
 
 Tab:AddButton({
     Name = "国服马可",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/r97d7dS0"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/r97d7dS0"))()
 end})
 
 Tab:AddToggle({
@@ -942,38 +942,38 @@ end})
 Tab:AddButton({
     Name = "超高画质",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/jHBfJYmS"))()
 end})
 
 Tab:AddButton({
     Name = "光影",
     Default = false,
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
 end})
 
 Tab:AddButton({
     Name = "飞车",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
 end})
 
 Tab:AddButton({
     Name = "动作 ( 部分服务器不可用 )",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Zj4NnKs6"))()
 end})
 
 Tab:AddButton({
     Name = "电脑键盘",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()
 end})
 
 Tab:AddButton({
     Name = "踏空行走",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -1054,7 +1054,7 @@ end})
 Tab:AddButton({
     Name = "传送玩家",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/YNVbeqPy"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/YNVbeqPy"))()
 end})
 
 Tab:AddButton({
@@ -1096,7 +1096,7 @@ local function Highlight(Player)
 end
 
 Players.PlayerAdded:Connect(Highlight)
-for i,v in next, Players:GetPlayers() do
+for i, v in next, Players:GetPlayers() do
     Highlight(v)
 end
 
@@ -1306,7 +1306,7 @@ onof.MouseButton1Down:connect(function()
         local Char = game.Players.LocalPlayer.Character
         local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
 
-        for i,v in next, Hum:GetPlayingAnimationTracks() do
+        for i, v in next, Hum:GetPlayingAnimationTracks() do
             v:AdjustSpeed(0)
         end
         speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,false)
@@ -1613,31 +1613,31 @@ end})
 Tab:AddButton({
     Name = "NB DOORS",
     Callback = function()
-loadstring(game:HttpGet("https://github.com/DocYogurt/DOORS/raw/main/Scripts/Gui/NBDOORS"))()
+    loadstring(game:HttpGet("https://github.com/DocYogurt/DOORS/raw/main/Scripts/Gui/NBDOORS"))()
 end})
 
 Tab:AddButton({
     Name = "mspaint",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"))()
 end})
 
 Tab:AddButton({
     Name = "NB DOORS FLOOR2",
     Callback = function()
-loadstring(game:HttpGet("https://github.com/DocYogurt/Main/raw/main/Scripts/DF2RW.lua"))()
+    loadstring(game:HttpGet("https://github.com/DocYogurt/Main/raw/main/Scripts/DF2RW.lua"))()
 end})
 
 Tab:AddButton({
     Name = "MS HUB",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSDOORS.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSDOORS.lua"))()
 end})
 
 Tab:AddButton({
     Name = "BlackKing汉化版",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\54\53\84\119\84\56\106\97"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\54\53\84\119\84\56\106\97"))()
 end})
 
 Tab:AddButton({
@@ -1698,7 +1698,7 @@ TextLabel.BackgroundTransparency = 1
 
 local GC = getconnections or get_signal_cons
 if GC then
-    for i,v in pairs(GC(LocalPlayer.Idled)) do
+    for i, v in pairs(GC(LocalPlayer.Idled)) do
         if v["Disable"] then
             v["Disable"](v)
         elseif v["Disconnect"] then
@@ -1718,7 +1718,7 @@ end
 function getLocker()
     local Closest
 
-    for i,v in pairs(workspace.CurrentRooms:GetDescendants()) do
+    for i, v in pairs(workspace.CurrentRooms:GetDescendants()) do
         if v.Name == "Rooms_Locker" then
             if v:FindFirstChild("Door") and v:FindFirstChild("HiddenPlayer") then
                 if v.HiddenPlayer.Value == nil then
@@ -1847,7 +1847,7 @@ end})
 Tab:AddButton({
     Name = "生成Rush",
     Callback = function()
-loadstring(game:HttpGet("https://rawscripts.net/raw/DOORS-Custom-Entity-S*er-V2-21705"))()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/DOORS-Custom-Entity-S*er-V2-21705"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -1859,37 +1859,37 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "NB DOORS物品",
     Callback = function()
-loadstring(game:HttpGet("https://github.com/DocYogurt/DOORS/raw/main/Scripts/Gui/ItemHub"))()
+    loadstring(game:HttpGet("https://github.com/DocYogurt/DOORS/raw/main/Scripts/Gui/ItemHub"))()
 end})
 
 Tab:AddButton({
     Name = "NVCS-3000 ( 夜视仪 )",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\78\86\67\83\45\51\48\48\48"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\78\86\67\83\45\51\48\48\48"))()
 end})
 
 Tab:AddButton({
     Name = "星光桶",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\83\116\97\114\74\117\103"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\83\116\97\114\74\117\103"))()
 end})
 
 Tab:AddButton({
     Name = "神圣手雷",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/u5B1UjGv"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/u5B1UjGv"))()
 end})
 
 Tab:AddButton({
     Name = "磁铁",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/xHxGDp51"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/xHxGDp51"))()
 end})
 
 Tab:AddButton({
     Name = "剪刀",
     Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/v2yEJYmu"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/v2yEJYmu"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -1905,7 +1905,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
     Name = "Rooms & Doors",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\82\111\111\109\115\37\50\48\37\50\54\37\50\48\68\111\111\114\115\46\108\117\97"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\82\111\111\109\115\37\50\48\37\50\54\37\50\48\68\111\111\114\115\46\108\117\97"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -1917,13 +1917,13 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "迷途之子",
     Callback = function()
-loadstring(game:HttpGet("https://szto.hkjc.uk/code"))()
+    loadstring(game:HttpGet("https://szto.hkjc.uk/code"))()
 end})
 
 Tab:AddButton({
     Name = "情云压力",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\80\114\101\115\115\117\114\101\46\108\117\97"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\80\114\101\115\115\117\114\101\46\108\117\97"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -1935,39 +1935,39 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "自瞄 ( 头部 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "Head",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "Head",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
     Name = "自瞄 ( 身体 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "HumanoidRootPart",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "HumanoidRootPart",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
@@ -2455,22 +2455,22 @@ Blue.Text = ""
 Blue.TextColor3 = Color3.fromRGB(0, 0, 0)
 Blue.TextSize = 14.000
 game:GetService("RunService").RenderStepped:connect(function()
- for i,v in next, game.Players:GetPlayers() do
-  if v.Name ~= game.Players.LocalPlayer.Name then
-   v.Character.HumanoidRootPart.Size = Vector3.new(HitBox.Text,HitBox.Text,HitBox.Text)
-   v.Character.HumanoidRootPart.Transparency = 0.8
-   v.Character.HumanoidRootPart.Color = Color3.new(Red.Text,Green.Text,Blue.Text)
-   v.Character.HumanoidRootPart.Material = "Neon"
-   v.Character.HumanoidRootPart.CanCollide = false
-  end
- end
+    for i, v in next, game.Players:GetPlayers() do
+        if v.Name ~= game.Players.LocalPlayer.Name then
+            v.Character.HumanoidRootPart.Size = Vector3.new(HitBox.Text,HitBox.Text,HitBox.Text)
+            v.Character.HumanoidRootPart.Transparency = 0.8
+            v.Character.HumanoidRootPart.Color = Color3.new(Red.Text,Green.Text,Blue.Text)
+            v.Character.HumanoidRootPart.Material = "Neon"
+            v.Character.HumanoidRootPart.CanCollide = false
+        end
+    end
 end)
 end})
 
 Tab:AddButton({
     Name = "玩家控制",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ChinaQY/-QY/Main/Ohio"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ChinaQY/-QY/Main/Ohio"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -2482,13 +2482,13 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "明月清风",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\71\65\66\80"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\71\65\66\80"))()
 end})
 
 Tab:AddButton({
     Name = "自动打无头骑士 ( 重生后再开功能 )",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\71\117\116\115\37\50\48\37\50\54\37\50\48\66\108\97\99\107\112\111\119\101\114\46\108\117\97"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\71\117\116\115\37\50\48\37\50\54\37\50\48\66\108\97\99\107\112\111\119\101\114\46\108\117\97"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -2533,7 +2533,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -2551,7 +2551,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ShamblerWalk" then
                     v:Stop()
                     walk = false
@@ -2568,7 +2568,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ShamblerIdle" then
                     v:Stop()
                     idle = false
@@ -2588,7 +2588,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.ShamblerAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "ShamblerWalk" then
             v:Stop()
        elseif tostring(v) == "ShamblerIdle" then
@@ -2611,7 +2611,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -2629,7 +2629,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "BomberWalk" then
                     v:Stop()
                     walk = false
@@ -2646,7 +2646,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "BomberIdle" then
                     v:Stop()
                     idle = false
@@ -2665,7 +2665,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.BomberAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "BomberWalk" then
             v:Stop()
        elseif tostring(v) == "BomberIdle" then
@@ -2688,7 +2688,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -2706,7 +2706,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "RunnerRun" then
                     v:Stop()
                     walk = false
@@ -2723,7 +2723,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "RunnerIdle" then
                     v:Stop()
                     idle = false
@@ -2743,7 +2743,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.RunnerAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "RunnerRun" then
             v:Stop()
        elseif tostring(v) == "RunnerIdle" then
@@ -2765,14 +2765,14 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 or humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ZapperWalk" then
                     v:Stop()
                     walk = false
@@ -2787,7 +2787,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ZapperIdle" then
                     v:Stop()
                     idle = false
@@ -2804,7 +2804,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.ZapperAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "ZapperWalk" then
             v:Stop()
        elseif tostring(v) == "ZapperIdle" then
@@ -2827,7 +2827,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -2845,7 +2845,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "IgniterWalk" then
                     v:Stop()
                     walk = false
@@ -2862,7 +2862,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "IgniterIdle" then
                     v:Stop()
                     idle = false
@@ -2881,7 +2881,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.IgniterAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "IgniterWalk" then
             v:Stop()
        elseif tostring(v) == "IgniterIdle" then
@@ -2904,7 +2904,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -2922,7 +2922,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "HeadlessWalk" then
                     v:Stop()
                     walk = false
@@ -2939,7 +2939,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "HeadlessIdle" then
                     v:Stop()
                     idle = false
@@ -2958,7 +2958,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.HeadlessAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "HeadlessWalk" then
             v:Stop()
        elseif tostring(v) == "HeadlessIdle" then
@@ -2981,7 +2981,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -2999,7 +2999,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "CuirassierWalk" then
                     v:Stop()
                     walk = false
@@ -3016,7 +3016,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "CuirassierIdle" then
                     v:Stop()
                     idle = false
@@ -3035,7 +3035,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.CuirassierAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "CuirassierWalk" then
             v:Stop()
        elseif tostring(v) == "CuirassierIdle" then
@@ -3058,7 +3058,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -3076,7 +3076,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "CuirassierCharge" then
                     v:Stop()
                     walk = false
@@ -3093,7 +3093,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "CuirassierIdle" then
                     v:Stop()
                     idle = false
@@ -3112,7 +3112,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.CuirassierChargeAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "CuirassierCharge" then
             v:Stop()
        elseif tostring(v) == "CuirassierIdle" then
@@ -3135,7 +3135,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -3153,7 +3153,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ChargeRun" then
                     v:Stop()
                     walk = false
@@ -3170,7 +3170,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ChargeIdle" then
                     v:Stop()
                     idle = false
@@ -3189,7 +3189,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.ChargeAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "ChargeRun" then
             v:Stop()
        elseif tostring(v) == "ChargeIdle" then
@@ -3212,7 +3212,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -3230,7 +3230,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ChargeLanceRun" then
                     v:Stop()
                     walk = false
@@ -3247,7 +3247,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ChargeLanceIdle" then
                     v:Stop()
                     idle = false
@@ -3266,7 +3266,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.ChargeLanceAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "ChargeLanceRun" then
             v:Stop()
        elseif tostring(v) == "ChargeLanceIdle" then
@@ -3289,7 +3289,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -3307,7 +3307,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ChargeHeavyRun" then
                     v:Stop()
                     walk = false
@@ -3324,7 +3324,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "ChargeHeavyIdle" then
                     v:Stop()
                     idle = false
@@ -3343,7 +3343,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.ChargeHeavyAnimation
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "ChargeHeavyRun" then
             v:Stop()
        elseif tostring(v) == "ChargeHeavyIdle" then
@@ -3366,7 +3366,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -3384,7 +3384,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "HeadlessHorseman" then
                     v:Stop()
                     walk = false
@@ -3401,7 +3401,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "HeadlessHorsemanIdle" then
                     v:Stop()
                     idle = false
@@ -3420,7 +3420,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.HeadlessHorsemanAnimation1
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "HeadlessHorseman" then
             v:Stop()
        elseif tostring(v) == "HeadlessHorsemanIdle" then
@@ -3443,7 +3443,7 @@ Tab:AddToggle({
             wait(0.0005)
             if char then
             local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-                for i,hold in next, Hum:GetPlayingAnimationTracks() do
+                for i, hold in next, Hum:GetPlayingAnimationTracks() do
                 if tostring(hold) == "Hold" or tostring(hold) == "WalkAnim" then
                     hold:Stop()
                     end
@@ -3461,7 +3461,7 @@ Tab:AddToggle({
                 end
                 local humanoid = char:FindFirstChildOfClass("Humanoid")
                 if humanoid.MoveDirection.X == 0 and humanoid.MoveDirection.Z == 0 then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "HeadlessHorseman" then
                     v:Stop()
                     walk = false
@@ -3478,7 +3478,7 @@ Tab:AddToggle({
                     idle = true
                     end
                 elseif not walk then
-                for i,v in next, Hum:GetPlayingAnimationTracks() do
+                for i, v in next, Hum:GetPlayingAnimationTracks() do
                     if tostring(v) == "HeadlessHorsemanIdle" then
                     v:Stop()
                     idle = false
@@ -3497,7 +3497,7 @@ Tab:AddToggle({
         end
         repeat task.wait() until not flags.HeadlessHorsemanAnimation2
         local Hum = char:FindFirstChildOfClass("Humanoid") or char:FindFirstChildOfClass("AnimationController")
-       for i,v in next, Hum:GetPlayingAnimationTracks() do
+       for i, v in next, Hum:GetPlayingAnimationTracks() do
        if tostring(v) == "HeadlessHorseman" then
             v:Stop()
        elseif tostring(v) == "HeadlessHorsemanIdle" then
@@ -3563,7 +3563,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "明月清风",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\76\67"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\67\104\105\110\97\81\89\47\83\99\114\105\112\116\115\47\77\97\105\110\47\76\67"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -3575,39 +3575,39 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "自瞄 ( 头部 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "Head",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "Head",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
     Name = "自瞄 ( 身体 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "HumanoidRootPart",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "HumanoidRootPart",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
@@ -3625,43 +3625,43 @@ end})
 Tab:AddButton({
     Name = "Criminology",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PresidentAnvil/temp-criminology/main/criminology.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PresidentAnvil/temp-criminology/main/criminology.lua"))()
 end})
 
 Tab:AddButton({
     Name = "Criminology Light",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PresidentAnvil/crimlight/main/criminologylight.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PresidentAnvil/crimlight/main/criminologylight.lua"))()
 end})
 
 Tab:AddButton({
     Name = "复制Criminology卡密获取链接",
     Callback = function()
-setclipboard("https://linkvertise.com/1193953/free-criminality-gui")
+    setclipboard("https://linkvertise.com/1193953/free-criminality-gui")
 end})
 
 Tab:AddButton({
     Name = "Max Hub",
     Callback = function()
-script_key = "\76\68\99\89\71\75\85\112\105\97\118\107\67\101\78\101\109\86\78\116\100\81\87\88\107\116\85\85\102\84\102\100";
-_G.MaxHub = {
-    GlobalChat = false,
-    Notifications = true
-}
+    script_key = "\76\68\99\89\71\75\85\112\105\97\118\107\67\101\78\101\109\86\78\116\100\81\87\88\107\116\85\85\102\84\102\100";
+    _G.MaxHub = {
+        GlobalChat = false,
+        Notifications = true
+    }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/993b07de445441e83e15ce5fde260d5f.lua"))()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/993b07de445441e83e15ce5fde260d5f.lua"))()
 end})
 
 Tab:AddButton({
     Name = "qwertyu4t55567rgdf的犯罪脚本",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/qwertyu4t55567rgdf/fling/main/Loader.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/qwertyu4t55567rgdf/fling/main/Loader.lua"))()
 end})
 
 Tab:AddButton({
     Name = "不知名犯罪脚本",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Vuubvyc/UNDETECTEDWAREEE/main/Script"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vuubvyc/UNDETECTEDWAREEE/main/Script"))()
 end})
 
 local Tab = Window:MakeTab({
@@ -3673,51 +3673,51 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "自瞄 ( 头部 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "Head",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "Head",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
     Name = "自瞄 ( 身体 )",
     Callback = function()
-getgenv().Camlock_Settings = {
-    Prediction = 0,
-    AimPart = "HumanoidRootPart",
-    AutoPrediction = false,
-    Notification = true,
-    Button = true,
-    AntiGroundShots = false,
-    UnderGroundResolver = false,
-    Version = "2.5.1",
-    Credits = "space_0999",
-    DiscordServer = "discord.gg/SKhamGzTdn"
-}
+    getgenv().Camlock_Settings = {
+        Prediction = 0,
+        AimPart = "HumanoidRootPart",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua"))()
 end})
 
 Tab:AddButton({
     Name = "垃圾桶战神",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/main/Trashcan%20Man"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/main/Trashcan%20Man"))()
 end})
 
 Tab:AddButton({
     Name = "动作集 ( 别人可以看见 )",
     Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Mautiku/ehh/main/strong%20guest.lua.txt"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Mautiku/ehh/main/strong%20guest.lua.txt"))()
 end})
 
 Tab:AddButton({
@@ -3735,19 +3735,19 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "情云Forsaken",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\70\111\114\115\97\107\101\110\46\108\117\97"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\81\105\110\103\45\89\117\110\45\68\101\118\47\83\99\114\105\112\116\115\47\77\97\105\110\47\70\111\114\115\97\107\101\110\46\108\117\97"))()
 end})
 
 Tab:AddButton({
     Name = "AppleStuff",
     Callback = function()
-loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/SilkScripts/AppleStuff/main/AppleFSKV2")))()
+    loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/SilkScripts/AppleStuff/main/AppleFSKV2")))()
 end})
 
 Tab:AddButton({
     Name = "FartHub",
     Callback = function()
-loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/ivannetta/ShitScripts/main/forsaken.lua")))()
+    loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/ivannetta/ShitScripts/main/forsaken.lua")))()
 end})
 
 local Tab = Window:MakeTab({
@@ -3759,13 +3759,13 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
     Name = "脚本中心",
     Callback = function()
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
 end})
 
 Tab:AddButton({
     Name = "XK脚本中心",
     Callback = function()
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\66\73\78\106\105\97\111\98\122\120\54\47\66\73\78\106\105\97\111\47\109\97\105\110\47\88\75\46\84\88\84\34\41\41\40\41\10")()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\66\73\78\106\105\97\111\98\122\120\54\47\66\73\78\106\105\97\111\47\109\97\105\110\47\88\75\46\84\88\84\34\41\41\40\41\10")()
 end})
 
 local Tab = Window:MakeTab({

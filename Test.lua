@@ -57,5 +57,6 @@ return {
     [56] = {"56e05958-fd32-404e-aec2-57d9c60bbfba", false},
     [57] = {"3c46ba80-41fc-495e-8576-3ed100854b84", false},
     [58] = {"a00e4821-d92f-4162-8207-4578fc1fdd17", false},
-    [59] = {"088f7eef-7950-41b9-9b10-6b111acaa277", false}
+    [59] = {"088f7eef-7950-41b9-9b10-6b111acaa277", false},
+    [60] = {"f559729e-1a6a-4401-bc1c-c5df10a8021d", false}
 }

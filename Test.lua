@@ -69,5 +69,6 @@ return {
     [68] = {"33b4d5ac-fd53-483f-b1ae-02fe089f1334", false},
     [69] = {"E8BE4BAB-E872-4F61-9186-77A18B940B60", false},
     [70] = {"6a6bcc44-a9f1-4092-ac34-f7fae1acc629", false},
-    [71] = {"710efea6-77b8-44c0-a578-781320970fbf", false}
+    [71] = {"710efea6-77b8-44c0-a578-781320970fbf", false},
+    [72] = {"60E73354-D547-4A38-A4EF-49B6F1822079", false}
 }

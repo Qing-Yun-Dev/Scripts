@@ -15,6 +15,10 @@
         "Regretevator" : {
             "Version" : "1.0",
             "Whitelist" : true
+        },
+        "CHAIN" : {
+            "Version" : "1.0",
+            "Whitelist" : true
         }
     }
 }

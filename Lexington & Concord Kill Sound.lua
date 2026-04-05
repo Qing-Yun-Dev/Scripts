@@ -3,10 +3,7 @@ game.ReplicatedStorage.ASSETS.Audio.UI.snd_BulletHit.SoundId = "rbxassetid://160
 game.Players.LocalPlayer.PlayerGui.FeaturesMenu.Round_Information.KillInformationFrame.DescendantAdded:Connect(function(TextLabel)
     if TextLabel:IsA("TextLabel") then
         task.wait()
-        if TextLabel.Text:find("Merciless") then
-            game.ReplicatedStorage.ASSETS.Audio.UI.snd_BulletKill.SoundId = "rbxassetid://102781169948079"
-        end
-        if TextLabel.Text:find("Gunshot") then
+        if TextLabel.Text:find("Gunshot") or TextLabel.Text:find("Merciless") then
             game.ReplicatedStorage.ASSETS.Audio.UI.snd_BulletKill.SoundId = "rbxassetid://102781169948079"
         end
         if TextLabel.Text:find("Headshot") then
